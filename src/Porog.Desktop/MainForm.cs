@@ -242,14 +242,15 @@ internal sealed class MainForm : Form
         if (heroTitle is null || heroTime is null || heroDetail is null) return;
         if (status.ServiceState != "Running")
         {
-            heroTitle.Text = "Защита требует внимания"; heroTime.Text = "Проверьте";
+            heroTitle.Text = status.ActiveSession is { } limited ? $"Частичная защита до {limited.EndsAt.ToLocalTime():HH:mm}" : "Защита требует внимания";
+            heroTime.Text = status.ActiveSession is { } active ? Remaining(active.EndsAt - status.Now) : "Проверьте";
             heroDetail.Text = status.Issues.FirstOrDefault()?.Message ?? "Служба проверяет доступ к механизмам блокировки.";
         }
         else if (status.ActiveSession is { } work)
         {
             heroTitle.Text = $"Закрыто до {work.EndsAt.ToLocalTime():HH:mm}";
             var left = work.EndsAt - status.Now;
-            heroTime.Text = $"{Math.Max(0, (int)left.TotalHours):00}:{Math.Max(0, left.Minutes):00}:{Math.Max(0, left.Seconds):00}";
+            heroTime.Text = Remaining(left);
             heroDetail.Text = $"«{work.Name}» · завершено процессов: {work.Attempts}\nПромежуток закончится автоматически. Штатной отмены нет.";
         }
         else
@@ -259,6 +260,12 @@ internal sealed class MainForm : Form
             heroDetail.Text = status.NextSchedule is { } upcoming ? $"Следующий блок: «{upcoming.Name}»\n{upcoming.StartAt.ToLocalTime():dd.MM.yyyy HH:mm} — {upcoming.EndAt.ToLocalTime():HH:mm}" : "Расписания пока нет. Создайте первый промежуток.";
         }
         if (footer is not null) footer.Text = "Сайты через hosts · приложения по имени .exe · все данные на этом компьютере";
+    }
+
+    private static string Remaining(TimeSpan value)
+    {
+        var left = value < TimeSpan.Zero ? TimeSpan.Zero : value;
+        return $"{(int)left.TotalHours:00}:{left.Minutes:00}:{left.Seconds:00}";
     }
 
     private void OpenBreak(Session session)
@@ -294,10 +301,11 @@ internal sealed class MainForm : Form
         }
         ShowBreak(); Save(this, "04-break-settings.png");
         ShowDiagnostics(); Save(this, "05-diagnostics.png");
-        // Render the actual break form offscreen. This command never starts a break session.
+        // Briefly show the real form so WinForms creates and lays out all child handles.
+        // Disposing this documentation-only preview never changes the service's break state.
         using var rest = new BreakForm(new(Guid.NewGuid(), null, "Break", DateTimeOffset.UtcNow,
             DateTimeOffset.UtcNow.AddMinutes(5), Name: "Отход"), Screen.PrimaryScreen!);
-        rest.CreateControl(); rest.RefreshCountdown(DateTimeOffset.UtcNow); Save(rest, "06-break.png");
+        rest.Show(); rest.RefreshCountdown(DateTimeOffset.UtcNow); Save(rest, "06-break.png");
         return;
         void Save(Form form, string name)
         {

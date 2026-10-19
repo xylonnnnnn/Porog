@@ -41,7 +41,7 @@
 | FR-05 | EngineWorker, Controller.Tick |
 | FR-06 | HostsBlocker.Render и Apply |
 | FR-07 | ProcessBlocker.Apply, проверка SID токена |
-| FR-08 | MainForm.UpdateStatus, Controller.GuardActive |
+| FR-08 | MainForm.UpdateStatus, Validation.GuardActive |
 | FR-09 | Полуоткрытые интервалы, Apply([]) после конца |
 | FR-10 | StartBreak, BreakForm, Screen.AllScreens |
 | FR-11 | AtomicJsonStore.Load, Controller.Tick при старте |

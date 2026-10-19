@@ -65,6 +65,18 @@ try {
     $ui = Start-Process "$env:ProgramFiles/Porog/Desktop/Porog.Desktop.exe" -ArgumentList @('--capture-docs', ('"' + "$proof/screenshots" + '"')) -PassThru
     if (-not $ui.WaitForExit(30000)) { $ui.Kill(); throw 'UI capture timed out' }
     Assert-Check ((Get-ChildItem "$proof/screenshots/*.png").Count -eq 6) 'Six real WinForms screens rendered'
+    Add-Type -AssemblyName System.Drawing
+    $breakBitmap = [System.Drawing.Bitmap]::new("$proof/screenshots/06-break.png")
+    try {
+        $lightPixels = 0
+        for ($x = 0; $x -lt $breakBitmap.Width; $x += 8) {
+            for ($y = 0; $y -lt $breakBitmap.Height; $y += 8) {
+                $pixel = $breakBitmap.GetPixel($x, $y)
+                if ($pixel.R -gt 210 -and $pixel.G -gt 210 -and $pixel.B -gt 210) { $lightPixels++ }
+            }
+        }
+        Assert-Check ($lightPixels -gt 40) 'Break form renders visible timer and instructions'
+    } finally { $breakBitmap.Dispose() }
     $breakId = [guid]::NewGuid()
     $rest = Invoke-Porog StartBreak @{durationMinutes=3} $breakId
     Assert-Check ($rest.ok) 'Valid 3-minute break started'
