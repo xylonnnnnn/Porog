@@ -1,0 +1,331 @@
+{
+  "date": "2026-10-19",
+  "platform": "macOS arm64",
+  "sdk": "10.0.402",
+  "configuration": "Release",
+  "total": 64,
+  "passed": 64,
+  "failed": 0,
+  "tests": [
+    {
+      "name": "Porog.Core.Tests.ControllerTests.BreakPersistsAbsoluteDeadlineAndCompletesAtBoundary(minutes: 3)",
+      "outcome": "Passed",
+      "duration": "00:00:00.0057805"
+    },
+    {
+      "name": "Porog.Core.Tests.RulesTests.NormalizesDomains(input: \" YouTube.COM \", expected: \"youtube.com\")",
+      "outcome": "Passed",
+      "duration": "00:00:00.0000629"
+    },
+    {
+      "name": "Porog.Core.Tests.RulesTests.RejectsBreakOutsideEndpoints(minutes: 2)",
+      "outcome": "Passed",
+      "duration": "00:00:00.0000770"
+    },
+    {
+      "name": "Porog.Core.Tests.RulesTests.RejectsInvalidOrInjectedDomains(input: \"https://youtube.com\")",
+      "outcome": "Passed",
+      "duration": "00:00:00.0006803"
+    },
+    {
+      "name": "Porog.Core.Tests.RulesTests.RejectsBreakOutsideEndpoints(minutes: -1)",
+      "outcome": "Passed",
+      "duration": "00:00:00.0000052"
+    },
+    {
+      "name": "Porog.Core.Tests.RulesTests.AcceptsExecutableNames(input: \"Telegram.exe\")",
+      "outcome": "Passed",
+      "duration": "00:00:00.0030634"
+    },
+    {
+      "name": "Porog.Core.Tests.RulesTests.RejectsBreakOutsideEndpoints(minutes: 0)",
+      "outcome": "Passed",
+      "duration": "00:00:00.0001573"
+    },
+    {
+      "name": "Porog.Core.Tests.RulesTests.SchedulerUsesHalfOpenIntervalsAndAbsoluteOffsets",
+      "outcome": "Passed",
+      "duration": "00:00:00.0002007"
+    },
+    {
+      "name": "Porog.Core.Tests.RulesTests.RejectsUnsafeExecutableNames(input: \"explorer.exe\")",
+      "outcome": "Passed",
+      "duration": "00:00:00.0000083"
+    },
+    {
+      "name": "Porog.Core.Tests.RulesTests.RejectsInvalidOrInjectedDomains(input: \"a..com\")",
+      "outcome": "Passed",
+      "duration": "00:00:00.0000250"
+    },
+    {
+      "name": "Porog.Core.Tests.RulesTests.HostsPreservesExternalBytesAndEditsWhileRemovingOnlyOwnedBlock",
+      "outcome": "Passed",
+      "duration": "00:00:00.0068815"
+    },
+    {
+      "name": "Porog.Core.Tests.RulesTests.RejectsOverlapButAllowsAdjacentAndDisabled",
+      "outcome": "Passed",
+      "duration": "00:00:00.0016539"
+    },
+    {
+      "name": "Porog.Core.Tests.RulesTests.RejectsUnsafeExecutableNames(input: \"../a.exe\")",
+      "outcome": "Passed",
+      "duration": "00:00:00.0000067"
+    },
+    {
+      "name": "Porog.Core.Tests.RulesTests.NormalizesDomains(input: \"пример.рф\", expected: \"xn--e1afmkfd.xn--p1ai\")",
+      "outcome": "Passed",
+      "duration": "00:00:00.0001192"
+    },
+    {
+      "name": "Porog.Core.Tests.RulesTests.RejectsInvalidOrInjectedDomains(input: \"a.com\\n0.0.0.0 victim.com\")",
+      "outcome": "Passed",
+      "duration": "00:00:00.0000113"
+    },
+    {
+      "name": "Porog.Core.Tests.RulesTests.RejectsBreakOutsideEndpoints(minutes: 13)",
+      "outcome": "Passed",
+      "duration": "00:00:00.0000055"
+    },
+    {
+      "name": "Porog.Core.Tests.RulesTests.RejectsUnsafeExecutableNames(input: \"C:\\\\Telegram.exe\")",
+      "outcome": "Passed",
+      "duration": "00:00:00.0003176"
+    },
+    {
+      "name": "Porog.Core.Tests.RulesTests.RejectsUnsafeExecutableNames(input: \"a.exe\\n\")",
+      "outcome": "Passed",
+      "duration": "00:00:00.0003583"
+    },
+    {
+      "name": "Porog.Core.Tests.RulesTests.AcceptsExecutableNames(input: \"GAME.EXE\")",
+      "outcome": "Passed",
+      "duration": "00:00:00.0000598"
+    },
+    {
+      "name": "Porog.Core.Tests.RulesTests.HostsRefusesBrokenMarkers(text: \"# END POROG V1\\n# BEGIN POROG V1\\n\")",
+      "outcome": "Passed",
+      "duration": "00:00:00.0000344"
+    },
+    {
+      "name": "Porog.Core.Tests.ControllerTests.PermissionErrorsReportPartialProtectionAndRecoverOnNextTick",
+      "outcome": "Passed",
+      "duration": "00:00:00.0069130"
+    },
+    {
+      "name": "Porog.Core.Tests.ControllerTests.ActiveLockIsEnforcedThroughIpc",
+      "outcome": "Passed",
+      "duration": "00:00:00.0055132"
+    },
+    {
+      "name": "Porog.Core.Tests.ControllerTests.MalformedCommandsReturnStructuredError(type: \"StartBreak\", json: \"null\")",
+      "outcome": "Passed",
+      "duration": "00:00:00.0013773"
+    },
+    {
+      "name": "Porog.Core.Tests.RulesTests.HostsRefusesBrokenMarkers(text: \"# BEGIN POROG V1\\n# BEGIN POROG V1\\n# END POROG V1\"···)",
+      "outcome": "Passed",
+      "duration": "00:00:00.0000046"
+    },
+    {
+      "name": "Porog.Core.Tests.RulesTests.RejectsInvalidOrInjectedDomains(input: \"-bad.com\")",
+      "outcome": "Passed",
+      "duration": "00:00:00.0000102"
+    },
+    {
+      "name": "Porog.Core.Tests.RulesTests.RejectsUnsafeExecutableNames(input: \"CSRSS.EXE\")",
+      "outcome": "Passed",
+      "duration": "00:00:00.0000174"
+    },
+    {
+      "name": "Porog.Core.Tests.RulesTests.RejectsInvalidOrInjectedDomains(input: \"127.0.0.1\")",
+      "outcome": "Passed",
+      "duration": "00:00:00.0000128"
+    },
+    {
+      "name": "Porog.Core.Tests.RulesTests.AcceptsExecutableNames(input: \"Моя игра.exe\")",
+      "outcome": "Passed",
+      "duration": "00:00:00.0000665"
+    },
+    {
+      "name": "Porog.Core.Tests.ControllerTests.MalformedCommandsReturnStructuredError(type: \"StartBreak\", json: \"{\\\"durationMinutes\\\":\\\"abc\\\"}\")",
+      "outcome": "Passed",
+      "duration": "00:00:00.0005294"
+    },
+    {
+      "name": "Porog.Core.Tests.RulesTests.RejectsUnsafeExecutableNames(input: \"telegram\")",
+      "outcome": "Passed",
+      "duration": "00:00:00.0000054"
+    },
+    {
+      "name": "Porog.Core.Tests.ControllerTests.RealHostsAdapterOnlyTouchesSandboxFileAndCreatesBackup",
+      "outcome": "Passed",
+      "duration": "00:00:00.0072345"
+    },
+    {
+      "name": "Porog.Core.Tests.ControllerTests.StaleEditorCannotOverwriteNewerConfig",
+      "outcome": "Passed",
+      "duration": "00:00:00.0341783"
+    },
+    {
+      "name": "Porog.Core.Tests.RulesTests.ActiveScheduleCannotBeDisabledDeletedShortenedOrRetargeted",
+      "outcome": "Passed",
+      "duration": "00:00:00.0005715"
+    },
+    {
+      "name": "Porog.Core.Tests.RulesTests.AcceptsBreakEndpoints(minutes: 3)",
+      "outcome": "Passed",
+      "duration": "00:00:00.0000125"
+    },
+    {
+      "name": "Porog.Core.Tests.RulesTests.RejectsEndBeforeStartAndEmptyTargets",
+      "outcome": "Passed",
+      "duration": "00:00:00.0010408"
+    },
+    {
+      "name": "Porog.Core.Tests.RulesTests.HostsRefusesBrokenMarkers(text: \"# BEGIN POROG V1\\n# END POROG V1 foreign\\n\")",
+      "outcome": "Passed",
+      "duration": "00:00:00.0000052"
+    },
+    {
+      "name": "Porog.Core.Tests.RulesTests.RejectsUnsafeExecutableNames(input: \"Porog.Service.exe\")",
+      "outcome": "Passed",
+      "duration": "00:00:00.0000542"
+    },
+    {
+      "name": "Porog.Core.Tests.RulesTests.HostsRefusesBrokenMarkers(text: \"# BEGIN POROG V1\\na\")",
+      "outcome": "Passed",
+      "duration": "00:00:00.0000052"
+    },
+    {
+      "name": "Porog.Core.Tests.ControllerTests.WarningIsDurableAcrossServiceRestart",
+      "outcome": "Passed",
+      "duration": "00:00:00.0095167"
+    },
+    {
+      "name": "Porog.Core.Tests.RulesTests.WarnsOnlyWithinWindowAndOnlyOncePerScheduleVersion",
+      "outcome": "Passed",
+      "duration": "00:00:00.0012861"
+    },
+    {
+      "name": "Porog.Core.Tests.RulesTests.HostsRefusesBrokenMarkers(text: \"# END POROG V1\\n\")",
+      "outcome": "Passed",
+      "duration": "00:00:00.0000738"
+    },
+    {
+      "name": "Porog.Core.Tests.ControllerTests.InvalidBreakDoesNotCreateRuntimeFile",
+      "outcome": "Passed",
+      "duration": "00:00:00.0014583"
+    },
+    {
+      "name": "Porog.Core.Tests.RulesTests.RejectsInvalidOrInjectedDomains(input: \"localhost\")",
+      "outcome": "Passed",
+      "duration": "00:00:00.0000083"
+    },
+    {
+      "name": "Porog.Core.Tests.ControllerTests.MalformedCommandsReturnStructuredError(type: \"NoSuchCommand\", json: \"{}\")",
+      "outcome": "Passed",
+      "duration": "00:00:00.0001914"
+    },
+    {
+      "name": "Porog.Core.Tests.RulesTests.AcceptsBreakEndpoints(minutes: 12)",
+      "outcome": "Passed",
+      "duration": "00:00:00.0000516"
+    },
+    {
+      "name": "Porog.Core.Tests.ControllerTests.BreakPersistsAbsoluteDeadlineAndCompletesAtBoundary(minutes: 12)",
+      "outcome": "Passed",
+      "duration": "00:00:00.0092543"
+    },
+    {
+      "name": "Porog.Core.Tests.RulesTests.NormalizesDomains(input: \"www.youtube.com.\", expected: \"www.youtube.com\")",
+      "outcome": "Passed",
+      "duration": "00:00:00.0000024"
+    },
+    {
+      "name": "Porog.Core.Tests.RulesTests.RejectsInvalidOrInjectedDomains(input: \"\")",
+      "outcome": "Passed",
+      "duration": "00:00:00.0001019"
+    },
+    {
+      "name": "Porog.Core.Tests.ControllerTests.RestartDuringWorkRestoresSessionAndAttemptCount",
+      "outcome": "Passed",
+      "duration": "00:00:00.0106393"
+    },
+    {
+      "name": "Porog.Core.Tests.RulesTests.HostsBlocksExactNamesOnIpv4AndIpv6",
+      "outcome": "Passed",
+      "duration": "00:00:00.0039230"
+    },
+    {
+      "name": "Porog.Core.Tests.ControllerTests.CorruptConfigIsPreservedAndNotSilentlyReplacedByBackup",
+      "outcome": "Passed",
+      "duration": "00:00:00.0061253"
+    },
+    {
+      "name": "Porog.Core.Tests.ControllerTests.FailedValidationDoesNotAlterConfigBytes",
+      "outcome": "Passed",
+      "duration": "00:00:00.0035562"
+    },
+    {
+      "name": "Porog.Core.Tests.ControllerTests.MalformedCommandsReturnStructuredError(type: \"GetSession\", json: \"{}\")",
+      "outcome": "Passed",
+      "duration": "00:00:00.0001287"
+    },
+    {
+      "name": "Porog.Core.Tests.RulesTests.RejectsDuplicateIdsDomainsAndProcesses",
+      "outcome": "Passed",
+      "duration": "00:00:00.0002474"
+    },
+    {
+      "name": "Porog.Core.Tests.ControllerTests.UnknownSchemaAndDeletedPrimaryDoNotResetConfiguration",
+      "outcome": "Passed",
+      "duration": "00:00:00.0062576"
+    },
+    {
+      "name": "Porog.Core.Tests.ControllerTests.MutationRetriesAreIdempotentAndCannotReuseIdsForDifferentContent",
+      "outcome": "Passed",
+      "duration": "00:00:00.0036118"
+    },
+    {
+      "name": "Porog.Core.Tests.RulesTests.RejectsInvalidOrInjectedDomains(input: \"example.com:443\")",
+      "outcome": "Passed",
+      "duration": "00:00:00.0000066"
+    },
+    {
+      "name": "Porog.Core.Tests.ControllerTests.CorruptRuntimeIsPreserved",
+      "outcome": "Passed",
+      "duration": "00:00:00.0004034"
+    },
+    {
+      "name": "Porog.Core.Tests.RulesTests.RejectsUnsafeExecutableNames(input: \"chrome.exe\")",
+      "outcome": "Passed",
+      "duration": "00:00:00.0000062"
+    },
+    {
+      "name": "Porog.Core.Tests.RulesTests.RejectsInvalidOrInjectedDomains(input: \"youtube.com/path\")",
+      "outcome": "Passed",
+      "duration": "00:00:00.0000074"
+    },
+    {
+      "name": "Porog.Core.Tests.ControllerTests.FullWorkLifecycleReappliesProcessesAndRemovesDomains",
+      "outcome": "Passed",
+      "duration": "00:00:00.0140233"
+    },
+    {
+      "name": "Porog.Core.Tests.RulesTests.RejectsInvalidOrInjectedDomains(input: \"*.example.com\")",
+      "outcome": "Passed",
+      "duration": "00:00:00.0000079"
+    },
+    {
+      "name": "Porog.Core.Tests.ControllerTests.ConfigPersistsAndReloadsAfterRestart",
+      "outcome": "Passed",
+      "duration": "00:00:00.0059683"
+    },
+    {
+      "name": "Porog.Core.Tests.RulesTests.RejectsInvalidOrInjectedDomains(input: \"you tube.com\")",
+      "outcome": "Passed",
+      "duration": "00:00:00.0000668"
+    }
+  ]
+}

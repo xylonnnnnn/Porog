@@ -1,0 +1,18 @@
+PASS: Windows Service installed and running
+PASS: Authenticated named pipe returns real protection state
+PASS: Invalid break rejected by service
+PASS: Schedule persisted through IPC
+PASS: Schedule activated automatically
+PASS: Real owner process terminated
+PASS: Observed process attempt counted
+PASS: Exact test domain added to hosts
+PASS: Direct IPC cannot cancel active interval
+PASS: Service restart restores active interval
+PASS: Work interval ends automatically
+PASS: Own hosts entries removed after interval
+PASS: Six real WinForms screens rendered
+PASS: Break form renders visible timer and instructions
+PASS: Valid 3-minute break started
+PASS: Break absolute deadline survives service restart
+PASS: Break retry idempotent after restart
+PASS: Service removed during test cleanup

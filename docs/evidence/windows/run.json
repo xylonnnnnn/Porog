@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-19",
+  "runUrl": "https://github.com/xylonnnnnn/Porog/actions/runs/39228874422",
+  "testedCommit": "0dc9f9c1257ac774e2a75cfc58f6577746db6835",
+  "runner": "GitHub-hosted windows-latest",
+  "conclusion": "success",
+  "build": {"configuration": "Release", "errors": 0, "warnings": 0},
+  "coreTests": {"passedOnLinux": 64, "passedOnWindows": 64, "failed": 0},
+  "windowsSmoke": {"passed": 18, "failed": 0},
+  "screenshots": {"count": 6, "visuallyInspected": true},
+  "evidenceArtifact": {
+    "url": "https://github.com/xylonnnnnn/Porog/actions/runs/39228874422/artifacts/12176471783",
+    "sha256": "24906ade6d0e168f205fb9af728cd215c112e2ef9f8f37fb1076446a97304af4",
+    "downloadVerified": true
+  },
+  "distributionArtifact": {
+    "url": "https://github.com/xylonnnnnn/Porog/actions/runs/39228874422/artifacts/12176386932",
+    "sha256": "32693b45aab8860417fbd2c39df95bf7b325c0d578b31179ba6681a25cb0ee74",
+    "note": "Checksum of the outer Actions artifact archive, which contains Porog-win-x64.zip."
+  },
+  "manualClientAcceptance": "Windows 10/11, browser DoH matrix, multi-user ACL, multi-monitor and OS notifications remain separate manual checks."
+}
