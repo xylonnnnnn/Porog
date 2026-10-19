@@ -1,0 +1,68 @@
+name: Build and verify Porog
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  core:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: '10.0.x'
+      - run: dotnet restore tests/Porog.Core.Tests --locked-mode
+      - run: dotnet test tests/Porog.Core.Tests -c Release --no-restore --logger trx --results-directory TestResults
+      - uses: actions/upload-artifact@v6
+        if: always()
+        with:
+          name: core-results-${{ matrix.os }}
+          path: TestResults
+  windows:
+    needs: core
+    runs-on: windows-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: '10.0.x'
+      - name: Build self-contained Windows distribution
+        shell: pwsh
+        run: ./scripts/Build.ps1
+      - name: Build harmless process target
+        run: dotnet publish tests/Porog.TestTarget -c Release -r win-x64 --self-contained false -o artifacts/test-target
+      - name: Verify installation and real Windows adapters
+        shell: pwsh
+        run: ./scripts/Test-Windows.ps1
+      - uses: actions/upload-artifact@v6
+        if: always()
+        with:
+          name: Porog-windows-evidence
+          path: artifacts/windows-smoke
+      - uses: actions/upload-artifact@v6
+        with:
+          name: Porog-win-x64
+          path: artifacts/Porog-win-x64.zip
+  release:
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs: windows
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: Porog-win-x64
+          path: package
+      - name: Publish release candidate
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          TAG: ${{ github.ref_name }}
+        run: gh release create "$TAG" package/Porog-win-x64.zip --prerelease --title "Porog $TAG" --notes "Windows x64 release candidate. Unsigned build. See README and docs/ACCEPTANCE.md for verification scope."

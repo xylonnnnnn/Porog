@@ -1,0 +1,14 @@
+**/bin/
+**/obj/
+.vs/
+.idea/
+.DS_Store
+artifacts/
+.tools/
+*.user
+*.suo
+*.log
+TestResults/
+docs/qa/
+__pycache__/
+.venv/
